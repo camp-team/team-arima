@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "locus-c1684"
+  },
+  "targets": {
+    "locus-c1684": {
+      "hosting": {
+        "locus": [
+          "locus-c1684"
+        ]
+      }
+    }
   }
 }
