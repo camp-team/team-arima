@@ -1,0 +1,17 @@
+@mixin sp {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin pc-s {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin notSP {
+  @media not all and (max-width: 600px) {
+    @content;
+  }
+}
