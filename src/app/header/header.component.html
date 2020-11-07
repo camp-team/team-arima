@@ -20,18 +20,15 @@
     </button>
   </mat-menu>
 
-  <!-- 以下はログインサービスが実装されて
-    userの値が取得可能になり次第コメントアウトを外します -->
+  <ng-template #notLogin>
+    <button mat-flat-button color="primary">ログイン</button>
+  </ng-template>
 
-  <!-- <ng-template #notLogin>
-    <button></button>
-  </ng-template> -->
-
-  <!-- <ng-container *ngIf="user$ | async as user; else notLogin">
+  <ng-container *ngIf="authService.user$ | async as user; else notLogin">
     <button
       class="actions__avatar"
       mat-icon-button
-      [style.background-image]="'url(' + user.avatarUrl + ')'"
+      [style.background-image]="'url(' + user.avaterUrl + ')'"
       [matMenuTriggerFor]="menu"
     ></button>
 
@@ -45,5 +42,5 @@
         <span>設定</span>
       </button>
     </mat-menu>
-  </ng-container> -->
+  </ng-container>
 </div>
