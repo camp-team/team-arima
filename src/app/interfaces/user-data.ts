@@ -1,6 +1,6 @@
 export interface UserData {
   uid: string;
   name: string;
-  avaterUrl: string;
+  avatarUrl: string;
   likedPostIds: string[];
 }
