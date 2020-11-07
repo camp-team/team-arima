@@ -4,6 +4,15 @@
     <mat-tab label="プロフィール">
       <div class="settings">
         <form>
+          <div class="settings__image">
+            <deer-crop-trigger
+              [options]="{
+                aspectRatio: 1 / 1,
+                oldImageUrl: oldImageUrl
+              }"
+              (image)="onCroppedImage($event)"
+            ></deer-crop-trigger>
+          </div>
           <mat-form-field class="settings__form" appearance="fill">
             <mat-label>名前</mat-label>
             <input autocomplete="off" matInput />
@@ -15,6 +24,19 @@
         </form>
       </div>
     </mat-tab>
-    <mat-tab label="退会">Content 2</mat-tab>
+    <mat-tab label="退会">
+      <div class="settings">
+        <p class="settings__coments">
+          一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
+        </p>
+        <button
+          class="settings__button settings__button--delete"
+          mat-flat-button
+          color="primary"
+        >
+          退会する
+        </button>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </div>

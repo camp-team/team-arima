@@ -2,6 +2,7 @@
 
 .settings-heading {
   text-align: center;
+  margin: 40px 0;
 }
 
 mat-form-field {
@@ -10,10 +11,24 @@ mat-form-field {
 
 .settings {
   text-align: center;
+  &__image {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 184px;
+    height: 184px;
+    margin: 40px auto;
+  }
   &__form {
     margin-bottom: 40px;
   }
+  &__coments {
+    margin: 40px 0;
+    text-align: left;
+  }
   &__button {
     background: $color-base;
+    &--delete {
+      background: $color-warn;
+    }
   }
 }
