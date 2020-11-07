@@ -17,6 +17,12 @@ export class AuthService {
     return this.afAuth.signInWithPopup(provider);
   }
 
+  loginWithTwitter(): Promise<firebase.default.auth.UserCredential> {
+    const provider = new firebase.default.auth.TwitterAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    return this.afAuth.signInWithPopup(provider);
+  }
+
   logout(): Promise<void> {
     return this.afAuth.signOut();
   }
