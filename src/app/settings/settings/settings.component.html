@@ -2,8 +2,8 @@
   <h2 class="settings-heading">アカウント設定</h2>
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="プロフィール">
-      <div *ngIf="authService.user$ | async" class="settings">
-        <form>
+      <div *ngIf="user$ | async" class="settings">
+        <form (ngSubmit)="submit()">
           <div class="settings__image">
             <deer-crop-trigger
               [options]="{
