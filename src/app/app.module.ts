@@ -14,6 +14,10 @@ import { environment } from 'src/environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -29,8 +33,12 @@ import { MatIconModule } from '@angular/material/icon';
     AngularFireAuthModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
   ],
-  providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
+  providers: [
+    { provide: REGION, useValue: 'asia-northeast1' },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

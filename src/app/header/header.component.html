@@ -1,6 +1,14 @@
 <p>header works!</p>
 
-<button mat-button color="primary">button</button>
+<button (click)="authService.loginWithGoogle()" mat-button color="primary">
+  google
+</button>
+<button (click)="authService.loginWithTwitter()" mat-button color="primary">
+  twiiter
+</button>
+
+<button (click)="authService.logout()">logout</button>
+
 <button mat-icon-button>
   <mat-icon>more_vert</mat-icon>
 </button>
