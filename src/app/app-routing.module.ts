@@ -9,8 +9,14 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'personal-list',
+    loadChildren: () =>
+      import('./personal-list/personal-list.module').then(
+        (m) => m.PersonalListModule
+      ),
+  },
+  {
     path: 'create',
-    pathMatch: 'full',
     loadChildren: () =>
       import('./create/create.module').then((m) => m.CreateModule),
   },
