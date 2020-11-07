@@ -12,13 +12,14 @@ import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { HeaderComponent } from './header/header.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
 import {
   MatSnackBarModule,
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -36,6 +37,9 @@ import {
     MatIconModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: REGION, useValue: 'asia-northeast1' },
