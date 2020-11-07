@@ -21,7 +21,12 @@
   </mat-menu>
 
   <ng-template #notLogin>
-    <button mat-flat-button color="primary">ログイン</button>
+    <button (click)="authService.loginWithGoogle()" mat-button color="primary">
+      google
+    </button>
+    <button (click)="authService.loginWithTwitter()" mat-button color="primary">
+      twitter
+    </button>
   </ng-template>
 
   <ng-container *ngIf="authService.user$ | async as user; else notLogin">
@@ -40,6 +45,10 @@
       <button mat-menu-item>
         <mat-icon>note_add</mat-icon>
         <span>設定</span>
+      </button>
+      <button (click)="authService.logout()" mat-menu-item>
+        <mat-icon>note_add</mat-icon>
+        <span>ログアウト</span>
       </button>
     </mat-menu>
   </ng-container>
