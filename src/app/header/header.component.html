@@ -1,1 +1,46 @@
-<p>header works!</p>
+<div class="header">
+  <button mat-button class="header__search">
+    <mat-icon inline>search</mat-icon>
+  </button>
+  <div class="header__logo">
+    <div class="header__logo-inner">
+      <a routerLink="/" class="header__logo-icon">Locus</a>
+    </div>
+  </div>
+  <button class="header__avatar" mat-button [matMenuTriggerFor]="menu"></button>
+
+  <mat-menu #menu="matMenu" xPosition="before" class="header__menu">
+    <button mat-menu-item>
+      <mat-icon>note_add</mat-icon>
+      <span>マイページ</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>note_add</mat-icon>
+      <span>設定</span>
+    </button>
+  </mat-menu>
+
+  <!-- <ng-template #notLogin>
+    <button></button>
+  </ng-template> -->
+
+  <!-- <ng-container *ngIf="user$ | async as user; else notLogin">
+    <button
+      class="actions__avatar"
+      mat-icon-button
+      [style.background-image]="'url(' + user.avatarUrl + ')'"
+      [matMenuTriggerFor]="menu"
+    ></button>
+
+    <mat-menu #option="matMenu" xPosition="before" class="header__menu">
+      <button mat-menu-item>
+        <mat-icon>note_add</mat-icon>
+        <span>マイページ</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>note_add</mat-icon>
+        <span>設定</span>
+      </button>
+    </mat-menu>
+  </ng-container> -->
+</div>
