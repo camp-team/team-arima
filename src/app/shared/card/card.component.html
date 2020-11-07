@@ -28,16 +28,18 @@
       {{ post.text }}
     </p>
   </mat-card-content>
-  <div class="bottom">
-    <ng-container *ngIf="user$ | async as user">
-      <div
-        mat-card-avatar
-        style="background-image: url('{{ user.avatarUrl }}');"
-        class="avatar"
-      ></div>
-      <div>{{ user.name }}</div>
-    </ng-container>
-  </div>
+  <a routerLink="/personal-list/{{ post.authorUid }}">
+    <div class="bottom">
+      <ng-container *ngIf="user$ | async as user">
+        <div
+          mat-card-avatar
+          style="background-image: url('{{ user.avatarUrl }}');"
+          class="avatar"
+        ></div>
+        <div>{{ user.name }}</div>
+      </ng-container>
+    </div>
+  </a>
 
   <div>{{ post.likeCount }}</div>
   <button mat-button>LIKE</button>

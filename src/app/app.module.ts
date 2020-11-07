@@ -21,15 +21,9 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PersonalListComponent } from './personal-list/personal-list/personal-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    NotFoundComponent,
-    PersonalListComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
