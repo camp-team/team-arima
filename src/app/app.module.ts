@@ -19,6 +19,7 @@ import {
   MatSnackBarModule,
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -36,6 +37,9 @@ import {
     MatIconModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: REGION, useValue: 'asia-northeast1' },
