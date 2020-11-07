@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="personal-list-wrapper" *ngIf="user$ | async as user">
+    <div
+      style="background-image: url('{{ user.avatarUrl }}');"
+      class="avatar"
+    ></div>
+    <div class="name">{{ user.name }}</div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="記事一覧">
+        <ng-container *ngFor="let post of post$ | async">
+          <app-card [post]="post"></app-card>
+        </ng-container>
+      </mat-tab>
+      <mat-tab label="カレンダー"></mat-tab>
+      <mat-tab label="いいね"></mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
