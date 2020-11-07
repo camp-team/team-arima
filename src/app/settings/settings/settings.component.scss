@@ -1,0 +1,19 @@
+@import 'variables';
+
+.settings-heading {
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.settings {
+  text-align: center;
+  &__form {
+    margin-bottom: 40px;
+  }
+  &__button {
+    background: $color-base;
+  }
+}
