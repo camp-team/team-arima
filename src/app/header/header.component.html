@@ -20,16 +20,16 @@
     </button>
   </mat-menu>
 
-  <!-- 以下はログインサービスが実装されて
-    userの値が取得可能になり次第コメントアウトを外します -->
-
-  <!-- <ng-template #notLogin>
-    <button mat-raised-button color="primary">
-      ログイン
+  <ng-template #notLogin>
+    <button (click)="authService.loginWithGoogle()" mat-button color="primary">
+      google
     </button>
-  </ng-template> -->
+    <button (click)="authService.loginWithTwitter()" mat-button color="primary">
+      twitter
+    </button>
+  </ng-template>
 
-  <!-- <ng-container *ngIf="user$ | async as user; else notLogin">
+  <ng-container *ngIf="authService.user$ | async as user; else notLogin">
     <button
       class="actions__avatar"
       mat-icon-button
@@ -46,10 +46,10 @@
         <mat-icon>note_add</mat-icon>
         <span>設定</span>
       </button>
-      <button mat-menu-item>
+      <button (click)="authService.logout()" mat-menu-item>
         <mat-icon>note_add</mat-icon>
         <span>ログアウト</span>
       </button>
     </mat-menu>
-  </ng-container> -->
+  </ng-container>
 </div>
