@@ -1,0 +1,44 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <ng-container *ngIf="user$ | async as user">
+      <button
+        *ngIf="user.uid === post.authorUid"
+        mat-icon-button
+        [matMenuTriggerFor]="menuRef"
+        class="card__edit"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menuRef="matMenu">
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>編集する</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>削除</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      {{ post.text }}
+    </p>
+  </mat-card-content>
+  <div class="bottom">
+    <ng-container *ngIf="user$ | async as user">
+      <div
+        mat-card-avatar
+        style="background-image: url('{{ user.avatarUrl }}');"
+        class="avatar"
+      ></div>
+      <div>{{ user.name }}</div>
+    </ng-container>
+  </div>
+
+  <div>{{ post.likeCount }}</div>
+  <button mat-button>LIKE</button>
+</mat-card>

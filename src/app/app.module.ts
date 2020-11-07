@@ -15,13 +15,15 @@ import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { NotFoundComponent } from './not-found/not-found.component';
 import {
   MatSnackBarModule,
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,6 +38,9 @@ import {
     MatIconModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: REGION, useValue: 'asia-northeast1' },

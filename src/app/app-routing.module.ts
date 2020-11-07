@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -13,9 +14,18 @@ const routes: Routes = [
       import('./welcome/welcome.module').then((m) => m.WelcomeModule),
   },
   {
+    path: 'create',
+    loadChildren: () =>
+      import('./create/create.module').then((m) => m.CreateModule),
+  },
+  {
     path: 'settings',
     loadChildren: () =>
       import('./settings/settings.module').then((m) => m.SettingsModule),
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="create-wrapper">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field>
+        <mat-label>タイトル</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="title"
+          placeholder="タイトル"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>テキスト</mat-label>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="8"
+          cdkAutosizeMaxRows="50"
+          type="text"
+          formControlName="text"
+          placeholder="今日やったこと・見た記事を投稿しましょう！"
+          required
+        ></textarea>
+      </mat-form-field>
+
+      <button
+        class="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="form.invalid || form.pristine"
+      >
+        投稿
+      </button>
+    </form>
+  </div>
+</div>
