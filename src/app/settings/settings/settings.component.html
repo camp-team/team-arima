@@ -2,7 +2,7 @@
   <h2 class="settings-heading">アカウント設定</h2>
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="プロフィール">
-      <div class="settings">
+      <div *ngIf="authService.user$ | async" class="settings">
         <form>
           <div class="settings__image">
             <deer-crop-trigger
@@ -15,7 +15,7 @@
           </div>
           <mat-form-field class="settings__form" appearance="fill">
             <mat-label>名前</mat-label>
-            <input autocomplete="off" matInput />
+            <input [formControl]="nameForm" autocomplete="off" matInput />
           </mat-form-field>
 
           <button class="settings__button" mat-flat-button color="primary">
