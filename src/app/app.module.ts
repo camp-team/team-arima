@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -27,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     AngularFireFunctionsModule,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule,
   ],
   providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
   bootstrap: [AppComponent],
