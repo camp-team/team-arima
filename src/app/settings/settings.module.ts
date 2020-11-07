@@ -10,9 +10,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CropperModule } from '@deer-inc/cropper';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 
 @NgModule({
-  declarations: [SettingsComponent],
+  declarations: [SettingsComponent, DeleteUserDialogComponent],
   imports: [
     CommonModule,
     SettingsRoutingModule,
@@ -24,6 +26,7 @@ import { CropperModule } from '@deer-inc/cropper';
     MatFormFieldModule,
     MatInputModule,
     CropperModule,
+    MatDialogModule,
   ],
 })
 export class SettingsModule {}
