@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "locus"
+  "defaultProject": "locus",
+  "cli": {
+    "analytics": false
+  }
 }
