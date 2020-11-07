@@ -9,7 +9,7 @@ export const createUser = functions
   .onCreate((user: any) => {
     const userData = {
       name: user.displayName || '',
-      avatarURL: user.photoURL?.replace('_nomal', '') || '',
+      avatarURL: user.photoUrl?.replace('_nomal', '') || '',
       uid: user.uid,
     };
     return db.doc(`users/${user.uid}`).set(userData);

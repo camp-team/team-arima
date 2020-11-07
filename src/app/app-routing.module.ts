@@ -9,15 +9,19 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'welcome',
+    loadChildren: () =>
+      import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
     path: 'create',
-    pathMatch: 'full',
     loadChildren: () =>
       import('./create/create.module').then((m) => m.CreateModule),
   },
   {
-    path: 'welcome',
+    path: 'settings',
     loadChildren: () =>
-      import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+      import('./settings/settings.module').then((m) => m.SettingsModule),
   },
   {
     path: '**',
