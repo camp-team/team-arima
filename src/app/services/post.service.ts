@@ -33,7 +33,9 @@ export class PostService {
     return this.db.collection<Post>('posts').valueChanges();
   }
 
-  getPostsByUid(uid: string): Observable<Post[]> {
-    return this.db.collection<Post>(`posts/${uid}`).valueChanges();
+  getPostsByAuthorUid(uid: string): Observable<Post[]> {
+    return this.db
+      .collection<Post>('posts', (ref) => ref.where('authorUid', '==', uid))
+      .valueChanges();
   }
 }
