@@ -10,11 +10,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,9 +24,7 @@ import { environment } from 'src/environments/environment';
     AngularFireStorageModule,
     AngularFireFunctionsModule,
   ],
-  providers: [
-    { provide: REGION, useValue: 'asia-northeast1' }
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
