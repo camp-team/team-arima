@@ -35,6 +35,7 @@ $locus-theme: mat-light-theme(
 @include angular-material-theme($locus-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import 'mixins';
 
 $color-base: #5cc0ef;
 $color-accent: #1c76bc;
@@ -79,4 +80,7 @@ a {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 24px;
+  @include sp {
+    padding: 0 16px;
+  }
 }
