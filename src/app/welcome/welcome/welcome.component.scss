@@ -85,10 +85,11 @@ img {
     }
   }
   &__logo {
+    font-family: 'Paytone One', sans-serif;
     color: $color-warn;
     font-size: 40px;
     @include notSP {
-      font-size: 60px;
+      font-size: 80px;
     }
   }
   &__description {
