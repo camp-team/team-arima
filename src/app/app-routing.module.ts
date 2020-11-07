@@ -16,14 +16,19 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'welcome',
+    loadChildren: () =>
+      import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
     path: 'create',
     loadChildren: () =>
       import('./create/create.module').then((m) => m.CreateModule),
   },
   {
-    path: 'welcome',
+    path: 'settings',
     loadChildren: () =>
-      import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+      import('./settings/settings.module').then((m) => m.SettingsModule),
   },
   {
     path: '**',

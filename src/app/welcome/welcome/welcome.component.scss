@@ -1,0 +1,245 @@
+@import 'variables';
+@import 'mixins';
+
+$color-base-light: #def3fc;
+
+img {
+  max-width: 100%;
+}
+
+.login-button {
+  margin: 30px 0 0;
+  padding: 8px 25px;
+  background-color: #1c76bc;
+  border-radius: 50px;
+  font-size: 18px;
+  @include notSP {
+    margin: 50px 0 0;
+  }
+}
+
+.is-sp {
+  @include notSP {
+    display: none;
+  }
+}
+
+.is-pc {
+  display: none;
+  @include notSP {
+    display: inline-block;
+  }
+}
+
+.hero {
+  position: relative;
+  padding: 60px 0;
+  margin-bottom: 20vw;
+  background-color: $color-base-light;
+  background-image: url('/assets/images/sp-blob-hero.svg');
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  &::after {
+    content: '';
+    display: block;
+    background-image: url('/assets/images/sp-wave-hero.svg');
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -20vw;
+    left: 0;
+    right: 0;
+    height: 20vw;
+    width: 100%;
+    z-index: -1;
+  }
+  @include notSP {
+    background-image: url('/assets/images/pc-hero-blob.svg');
+    &::after {
+      bottom: -12vw;
+      height: 12vw;
+    }
+  }
+  &__content {
+    @include notSP {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 60px);
+    }
+  }
+  &__main {
+    text-align: center;
+    @include notSP {
+      width: 45%;
+      text-align: left;
+    }
+  }
+  &__imgs {
+    @include notSP {
+      width: 45%;
+      margin-left: 10%;
+    }
+  }
+  &__logo {
+    font-family: 'Paytone One', sans-serif;
+    color: $color-warn;
+    font-size: 64px;
+    @include notSP {
+      font-size: 80px;
+    }
+  }
+  &__description {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 20px 0;
+    color: #707070;
+    font-size: 20px;
+    @include notSP {
+      font-size: 24px;
+    }
+  }
+}
+
+.about {
+  padding: 25vw 0;
+  @include notSP {
+    padding: 60px 0;
+  }
+  &__title {
+    color: #707070;
+    font-size: 24px;
+    text-align: center;
+    @include notSP {
+      font-size: 32px;
+    }
+  }
+  &__img {
+    margin: 20px 0;
+    text-align: center;
+    @include notSP {
+      max-width: 70%;
+      margin: 30px auto;
+    }
+  }
+  &__text {
+    color: #707070;
+    font-size: 18px;
+    @include notSP {
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+}
+
+.message {
+  position: relative;
+  margin: 15vw 0;
+  background-color: $color-base-light;
+  background-image: url('/assets/images/sp-blob.svg');
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #707070;
+  font-size: 18px;
+  &::before {
+    content: '';
+    display: block;
+    background-image: url('/assets/images/sp-wave-1.svg');
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -15vw;
+    left: 0;
+    right: 0;
+    height: 15vw;
+    width: 100%;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    display: block;
+    background-image: url('/assets/images/sp-wave-2.svg');
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -15vw;
+    left: 0;
+    right: 0;
+    height: 15vw;
+    width: 100%;
+    z-index: -1;
+  }
+  @include notSP {
+    background-image: none;
+    font-size: 22px;
+    &::before {
+      background-image: url('/assets/images/pc-wave-1.svg');
+    }
+    &::after {
+      background-image: url('/assets/images/pc-wave-2.svg');
+    }
+  }
+  &__content {
+    padding: 30px 0;
+    @include notSP {
+      padding: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:nth-of-type(even) {
+        background-image: url('/assets/images/pc-blob-2.svg');
+        background-position: center center;
+        background-size: 70% auto;
+        background-repeat: no-repeat;
+      }
+      &:nth-of-type(odd) {
+        flex-direction: row-reverse;
+        background-image: url('/assets/images/pc-blob-1.svg');
+        background-position: bottom left;
+        background-size: 70% auto;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  &__text {
+    padding: 0;
+    @include notSP {
+      width: 55%;
+      padding: 0 16px;
+    }
+  }
+  img {
+    display: block;
+    width: 80%;
+    margin: 40px auto 0;
+    padding: 0;
+    @include notSP {
+      padding: 0 16px;
+      width: 40%;
+    }
+  }
+}
+
+.start {
+  padding: 25vw 0;
+  text-align: center;
+  @include notSP {
+    padding: 150px 0 80px;
+  }
+  &__img {
+    margin: 20px 0;
+    @include notSP {
+      max-width: 50%;
+      margin: 30px auto;
+    }
+  }
+  &__text {
+    color: #707070;
+    font-size: 24px;
+  }
+}
