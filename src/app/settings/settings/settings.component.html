@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="settings-heading">アカウント設定</h2>
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab label="プロフィール">
+      <div *ngIf="user$ | async" class="settings">
+        <form (ngSubmit)="submit()">
+          <div class="settings__image">
+            <deer-crop-trigger
+              [options]="{
+                aspectRatio: 1 / 1,
+                oldImageUrl: oldImageUrl
+              }"
+              (image)="onCroppedImage($event)"
+            ></deer-crop-trigger>
+          </div>
+          <mat-form-field class="settings__form" appearance="fill">
+            <mat-label>名前</mat-label>
+            <input [formControl]="nameForm" autocomplete="off" matInput />
+          </mat-form-field>
+
+          <button class="settings__button" mat-flat-button color="primary">
+            変更する
+          </button>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="退会">
+      <div class="settings">
+        <p class="settings__coments">
+          一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
+        </p>
+        <button
+          (click)="openDialog()"
+          class="settings__button settings__button--delete"
+          mat-flat-button
+          color="primary"
+        >
+          退会する
+        </button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

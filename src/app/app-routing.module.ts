@@ -9,15 +9,31 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'create',
-    pathMatch: 'full',
+    path: 'login',
     loadChildren: () =>
-      import('./create/create.module').then((m) => m.CreateModule),
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'personal-list',
+    loadChildren: () =>
+      import('./personal-list/personal-list.module').then(
+        (m) => m.PersonalListModule
+      ),
   },
   {
     path: 'welcome',
     loadChildren: () =>
       import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
+    path: 'create',
+    loadChildren: () =>
+      import('./create/create.module').then((m) => m.CreateModule),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./settings/settings.module').then((m) => m.SettingsModule),
   },
   {
     path: '**',

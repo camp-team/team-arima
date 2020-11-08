@@ -1,0 +1,13 @@
+@import 'variables';
+
+.message {
+  margin-bottom: 40px;
+}
+
+.actions {
+  justify-content: space-evenly;
+  &__button {
+    background: $color-warn;
+    color: #ffffff;
+  }
+}
