@@ -52,7 +52,6 @@
       </a>
     </div>
     <div class="card__like">
-      <div *ngIf="likedCount !== 0">{{ likedCount }}</div>
       <div class="like__button">
         <input
           *ngIf="!isLiked"
@@ -134,6 +133,7 @@
           </svg>
         </label>
       </div>
+      <div *ngIf="likedCount !== 0">{{ likedCount }}</div>
     </div>
   </div>
 </mat-card>
