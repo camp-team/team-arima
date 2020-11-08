@@ -21,11 +21,11 @@
     <mat-menu #menu="matMenu" xPosition="before" class="header__menu">
       <button mat-menu-item>
         <mat-icon>note_add</mat-icon>
-        <span>マイページ</span>
+        <a routerLink="personal-list/{{ user.uid }}">マイページ</a>
       </button>
       <button mat-menu-item>
         <mat-icon>note_add</mat-icon>
-        <span>設定</span>
+        <a routerLink="/settings">設定</a>
       </button>
       <button (click)="authService.logout()" mat-menu-item>
         <mat-icon>note_add</mat-icon>
