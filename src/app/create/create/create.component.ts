@@ -13,7 +13,7 @@ export class CreateComponent implements OnInit {
   form = this.fb.group({
     title: ['', [Validators.required, Validators.maxLength(40)]],
     text: ['', [Validators.required, Validators.maxLength(500)]],
-    link: ['', [Validators.required, Validators.maxLength(500)]],
+    link: ['', [Validators.maxLength(500)]],
   });
 
   constructor(
@@ -22,6 +22,18 @@ export class CreateComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router
   ) {}
+
+  get titleControl(): FormControl {
+    return this.form.get('title') as FormControl;
+  }
+
+  get textControl(): FormControl {
+    return this.form.get('text') as FormControl;
+  }
+
+  get linkControl(): FormControl {
+    return this.form.get('link') as FormControl;
+  }
 
   ngOnInit(): void {}
 
