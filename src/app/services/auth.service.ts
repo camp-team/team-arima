@@ -33,7 +33,7 @@ export class AuthService {
   ) {}
 
   private resolveLogin(): void {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('home');
     this.snackBar.open('ログインしました', null);
   }
 

@@ -20,8 +20,9 @@
     width: 400px;
   }
   &__title {
+    font-family: 'Paytone One';
     font-weight: 700;
-    font-size: 48px;
+    font-size: 56px;
     margin-bottom: 16px;
   }
   &__text {
@@ -38,7 +39,7 @@
 
 .actions {
   &__title {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 48px;
     margin-bottom: 16px;
   }
