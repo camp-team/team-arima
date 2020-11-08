@@ -22,9 +22,15 @@ import {
 } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
+import { ShellComponent } from './shell/shell.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NotFoundComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    NotFoundComponent,
+    ShellComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
