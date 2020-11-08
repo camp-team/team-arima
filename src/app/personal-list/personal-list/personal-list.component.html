@@ -16,7 +16,11 @@
           <app-carendar [posts]="posts"></app-carendar>
         </ng-container>
       </mat-tab>
-      <mat-tab label="いいね"></mat-tab>
+      <mat-tab label="いいね">
+        <ng-container *ngFor="let post of likedPosts$ | async; index as i">
+          <app-card [post]="post" [index]="i"></app-card>
+        </ng-container>
+      </mat-tab>
     </mat-tab-group>
   </div>
 </div>

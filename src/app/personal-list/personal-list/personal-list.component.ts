@@ -14,6 +14,9 @@ import { UserService } from 'src/app/services/user.service';
 export class PersonalListComponent implements OnInit {
   user$: Observable<UserData>;
   posts$: Observable<Post[]>;
+  uid: string;
+
+  likedPosts$;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,9 +30,10 @@ export class PersonalListComponent implements OnInit {
 
   init(): void {
     this.route.paramMap.subscribe((map) => {
-      const uid = map.get('id');
-      this.user$ = this.userService.getUser(uid);
-      this.posts$ = this.postService.getPostsByAuthorUid(uid);
+      this.uid = map.get('id');
+      this.user$ = this.userService.getUser(this.uid);
+      this.posts$ = this.postService.getPostsByAuthorUid(this.uid);
+      this.likedPosts$ = this.postService.getLikedPosts(this.uid);
     });
   }
 }
