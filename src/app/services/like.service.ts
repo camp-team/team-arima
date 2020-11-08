@@ -25,7 +25,7 @@ export class LikeService {
 
   isLikedPost(postId: string, uid: string): Observable<boolean> {
     return this.db
-      .doc(`users/${uid}/likePosts/${postId}`)
+      .doc(`posts/${postId}/likedUserIds/${uid}`)
       .valueChanges()
       .pipe(map((post) => !!post));
   }

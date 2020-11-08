@@ -5,7 +5,6 @@ import { Post } from 'src/app/interfaces/post';
 import { UserData } from 'src/app/interfaces/user-data';
 import { AuthService } from 'src/app/services/auth.service';
 import { LikeService } from 'src/app/services/like.service';
-import { PostService } from 'src/app/services/post.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -25,8 +24,7 @@ export class CardComponent implements OnInit {
   constructor(
     private userService: UserService,
     private likeService: LikeService,
-    private authService: AuthService,
-    private postService: PostService
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -34,24 +32,21 @@ export class CardComponent implements OnInit {
     this.user$
       .pipe(take(1))
       .toPromise()
-      .then((user) => (this.uid = user.uid));
-    this.likeService
-      .isLikedPost(this.post.postId, this.uid)
-      .pipe(take(1))
-      .subscribe((isLiked) => (this.isLiked = isLiked));
-    this.postService
-      .getPostByPostId(this.post.postId)
-      .pipe(take(1))
-      .subscribe((post) => {
-        this.likedCount = post.likedCount;
+      .then((user) => {
+        this.uid = user.uid;
+        this.likeService
+          .isLikedPost(this.post.postId, this.uid)
+          .pipe(take(1))
+          .subscribe((isLiked) => {
+            this.isLiked = isLiked;
+          });
       });
+    this.likedCount = this.post.likedCount;
   }
 
   likePost(): void {
     this.isLiked = true;
     this.likedCount++;
-    console.log(this.post.postId);
-    console.log(this.uid);
     this.likeService.likePost(this.post.postId, this.uid);
   }
 
