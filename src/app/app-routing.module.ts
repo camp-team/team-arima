@@ -17,13 +17,26 @@ const routes: Routes = [
   {
     path: 'create',
     pathMatch: 'full',
+    path: 'personal-list',
     loadChildren: () =>
-      import('./create/create.module').then((m) => m.CreateModule),
+      import('./personal-list/personal-list.module').then(
+        (m) => m.PersonalListModule
+      ),
   },
   {
     path: 'welcome',
     loadChildren: () =>
       import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
+    path: 'create',
+    loadChildren: () =>
+      import('./create/create.module').then((m) => m.CreateModule),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./settings/settings.module').then((m) => m.SettingsModule),
   },
   {
     path: '**',
