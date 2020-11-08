@@ -52,11 +52,22 @@
       </a>
     </div>
     <div class="card__like">
-      <div>{{ likedCount }}</div>
+      <div *ngIf="likedCount !== 0">{{ likedCount }}</div>
       <div class="like__button">
         <input
+          *ngIf="!isLiked"
           type="checkbox"
           class="like__checkbox"
+          [class.like__checkbox--true]="isLiked"
+          (click)="likePost()"
+          id="checkbox{{ index }}"
+        />
+        <input
+          *ngIf="isLiked"
+          type="checkbox"
+          class="like__checkbox"
+          [class.like__checkbox--true]="isLiked"
+          (click)="unLikePost()"
           id="checkbox{{ index }}"
         />
         <label for="checkbox{{ index }}">
