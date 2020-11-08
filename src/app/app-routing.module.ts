@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ShellComponent } from './shell/shell.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'welcome',
-    pathMatch: 'full',
     data: {
       root: true,
     },
@@ -21,10 +21,11 @@ const routes: Routes = [
   {
     path: '',
     component: ShellComponent,
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
-        path: '',
-        pathMatch: 'full',
+        path: 'home',
         loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule),
       },
