@@ -10,13 +10,10 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    pathMatch: 'full',
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginModule),
   },
   {
-    path: 'create',
-    pathMatch: 'full',
     path: 'personal-list',
     loadChildren: () =>
       import('./personal-list/personal-list.module').then(
