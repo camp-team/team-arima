@@ -1,7 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Post } from '../interfaces/post';
 import { AuthService } from './auth.service';
 
@@ -46,5 +47,21 @@ export class PostService {
     return this.db
       .collection<Post>('posts', (ref) => ref.where('authorUid', '==', uid))
       .valueChanges();
+  }
+
+  getLikedPosts(uid: string): Observable<any> {
+    return this.db
+      .collection(`users/${uid}/likePosts`)
+      .valueChanges()
+      .pipe(
+        switchMap((posts) => {
+          return combineLatest(
+            posts.map((post: any) => {
+              console.log(post.postId);
+              return this.db.doc<Post>(`posts/${post.postId}`).valueChanges();
+            })
+          );
+        })
+      );
   }
 }
