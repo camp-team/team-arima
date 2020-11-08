@@ -27,6 +27,9 @@
     <p class="card__text">
       {{ post.text }}
     </p>
+    <a class="card__link" *ngIf="post.link" href="{{ post.link }}">
+      {{ post.link }}
+    </a>
   </mat-card-content>
 
   <div class="card__bottom">

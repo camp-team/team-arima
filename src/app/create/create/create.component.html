@@ -21,9 +21,20 @@
           cdkAutosizeMaxRows="50"
           type="text"
           formControlName="text"
-          placeholder="今日やったこと・見た記事を投稿しましょう！"
+          placeholder="今日やったことを投稿しましょう！"
           required
         ></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>今日見た記事のURL</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="link"
+          placeholder="URL"
+          required
+        />
       </mat-form-field>
 
       <button

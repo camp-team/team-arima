@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
-import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 
 @Component({
   selector: 'app-create',
@@ -14,6 +13,7 @@ export class CreateComponent implements OnInit {
   form = this.fb.group({
     title: ['', [Validators.required, Validators.maxLength(40)]],
     text: ['', [Validators.required, Validators.maxLength(500)]],
+    link: ['', [Validators.required, Validators.maxLength(500)]],
   });
 
   constructor(
@@ -23,18 +23,11 @@ export class CreateComponent implements OnInit {
     private router: Router
   ) {}
 
-  get title(): FormControl {
-    return this.form.get('title') as FormControl;
-  }
-  get text(): FormControl {
-    return this.form.get('title') as FormControl;
-  }
-
   ngOnInit(): void {}
 
   submit(): void {
     this.postService.createPost(this.form.value).then(() => {
-      this.snackBar.open('投稿しました🎉', null);
+      this.snackBar.open('今日もよく頑張りました！🎉', null);
       this.router.navigateByUrl('/');
     });
   }
