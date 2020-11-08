@@ -1,0 +1,56 @@
+@import 'variables';
+
+.sign-in {
+  &__inner {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__about {
+    width: 50vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  &__items {
+    max-width: 80%;
+    width: 400px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  &__text {
+    color: rgb(0, 0, 0, 0.6);
+  }
+  &__actions {
+    background-color: #a7d7ee;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.actions {
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  &__items {
+    max-width: 80%;
+    width: 400px;
+  }
+  &__text {
+    color: rgb(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+    font-family: 'Inter', 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN',
+      'Hiragino Sans', Meiryo, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
