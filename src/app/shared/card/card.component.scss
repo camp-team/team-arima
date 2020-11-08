@@ -20,6 +20,15 @@
     text-align: left;
   }
 
+  &__link {
+    display: block;
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 16px;
+    text-align: left;
+    word-break: break-all;
+  }
+
   &__bottom {
     display: flex;
     justify-content: space-between;
