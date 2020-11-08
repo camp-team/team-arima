@@ -3,7 +3,7 @@ export interface Post {
   title: string;
   text: string;
   authorUid: string;
-  createdAt: number;
+  createdAt: string;
   likeCount: number;
   likedUserIds: string[];
 }
