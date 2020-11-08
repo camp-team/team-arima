@@ -25,7 +25,7 @@ export class UserService {
   async uploadImage(image: string, uid: string): Promise<string> {
     const result = await this.storage
       .ref(`users/${uid}`)
-      .putString(image, firebase.default.storage.StringFormat.DATA_URL);
+      .putString(image, 'data_url');
     return result.ref.getDownloadURL();
   }
 }
