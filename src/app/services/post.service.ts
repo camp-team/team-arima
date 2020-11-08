@@ -24,7 +24,7 @@ export class PostService {
       postId,
       createdAt: this.transDate(),
       authorUid: this.authService.uid,
-      likeCount: 0,
+      likedCount: 0,
       ...post,
     };
     await this.db.doc<Post>(`posts/${postId}`).set(newValue);

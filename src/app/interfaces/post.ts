@@ -5,6 +5,6 @@ export interface Post {
   link?: string;
   authorUid: string;
   createdAt: string;
-  likeCount: number;
+  likedCount: number;
   likedUserIds: string[];
 }
