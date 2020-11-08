@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,10 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe, registerLocaleData } from '@angular/common';
+import localeJa from '@angular/common/locales/ja';
+
+registerLocaleData(localeJa);
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NotFoundComponent],
@@ -43,6 +47,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   providers: [
+    DatePipe,
+    {
+      provide: LOCALE_ID,
+      useValue: 'ja-JP',
+    },
     { provide: REGION, useValue: 'asia-northeast1' },
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
   ],

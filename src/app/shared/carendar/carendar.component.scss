@@ -1,0 +1,68 @@
+.calendar {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+}
+
+:host ::ng-deep {
+  .fc .fc-daygrid-day-frame {
+    position: relative;
+    height: 45px;
+    max-width: 500px;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    button {
+      display: flex;
+      justify-content: center;
+      max-width: 30px;
+    }
+  }
+
+  .fc-daygrid-body .fc-daygrid-body-unbalanced {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .fc-daygrid-bg-harness {
+    left: 100% !important;
+    right: 100% !important;
+  }
+
+  .fc .fc-daygrid-day-number {
+    padding: 0;
+    padding-right: 4px;
+    font-size: 14px;
+  }
+
+  .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    position: relative;
+    min-height: 0;
+    height: 15px;
+  }
+
+  .fc-daygrid-day-events {
+    display: flex;
+  }
+  .fc-daygrid-event-harness {
+    width: 50%;
+  }
+
+  .fc-done,
+  .fc-done div,
+  .fc-done span a {
+    border: none;
+    background-color: #2cbd5f;
+    background-size: 20px 20px;
+  }
+
+  .fc .fc-view-harness {
+    background: #ffffff;
+  }
+}
