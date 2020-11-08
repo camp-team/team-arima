@@ -1,0 +1,39 @@
+<div class="sign-in">
+  <div class="sign-in__inner">
+    <div class="sign-in__about">
+      <div class="sign-in__items">
+        <p class="sign-in__title">Locus</p>
+        <p class="sign-in__text">
+          Locusは日々の勉強の軌跡を記録できるサービスです。<br />
+          日々記録してタイムラインに投稿することで、他の勉強している人たちと競いましょう。
+        </p>
+      </div>
+    </div>
+    <div class="sign-in__actions">
+      <div class="actions">
+        <div class="actions__items">
+          <div class="actions__title">Sign In</div>
+          <div class="actions__text">
+            新規登録、ログインどちらも以下のボタンで行えます。
+          </div>
+          <div class="actions__button">
+            <button
+              (click)="authService.loginWithGoogle()"
+              mat-button
+              color="primary"
+            >
+              Googleでログイン
+            </button>
+            <button
+              (click)="authService.loginWithTwitter()"
+              mat-button
+              color="primary"
+            >
+              Twitterでログイン
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

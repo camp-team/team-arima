@@ -9,6 +9,12 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'login',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
+  {
     path: 'create',
     pathMatch: 'full',
     loadChildren: () =>
