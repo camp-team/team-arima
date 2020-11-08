@@ -30,17 +30,18 @@
   </mat-card-content>
   <a routerLink="/personal-list/{{ post.authorUid }}">
     <div class="bottom">
-      <ng-container *ngIf="user$ | async as user">
+      <ng-container *ngIf="author$ | async as author">
         <div
           mat-card-avatar
-          style="background-image: url('{{ user.avatarUrl }}');"
+          style="background-image: url('{{ author.avatarUrl }}');"
           class="avatar"
         ></div>
-        <div>{{ user.name }}</div>
+        <div>{{ author.name }}</div>
       </ng-container>
     </div>
   </a>
 
-  <div>{{ post.likeCount }}</div>
-  <button mat-button>LIKE</button>
+  <div>{{ likedCount }}</div>
+  <button *ngIf="!isLiked" (click)="likePost()" mat-button>LIKE</button>
+  <button *ngIf="isLiked" (click)="unLikePost()" mat-button>UNLIKE</button>
 </mat-card>

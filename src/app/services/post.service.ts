@@ -19,13 +19,13 @@ export class PostService {
       postId,
       createdAt: Date.now(),
       authorUid: this.authService.uid,
-      likeCount: 0,
+      likedCount: 0,
       ...post,
     };
     await this.db.doc<Post>(`posts/${postId}`).set(newValue);
   }
 
-  getPostById(postId: string): Observable<Post> {
+  getPostByPostId(postId: string): Observable<Post> {
     return this.db.doc<Post>(`posts/${postId}`).valueChanges();
   }
 

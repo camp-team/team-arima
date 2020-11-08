@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { UserData } from '../interfaces/user-data';
-import { AngularFireStorage } from '@angular/fire/storage';
-import * as firebase from 'firebase';
 @Injectable({
   providedIn: 'root',
 })

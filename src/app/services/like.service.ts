@@ -11,7 +11,7 @@ export class LikeService {
 
   likePost(postId: string, uid: string): Promise<void[]> {
     return Promise.all([
-      this.db.doc(`users/${uid}/likePosts/${postId}`).set(postId),
+      this.db.doc(`users/${uid}/likePosts/${postId}`).set({ postId }),
       this.db.doc(`posts/${postId}/likedUserIds/${uid}`).set({ uid }),
     ]);
   }
