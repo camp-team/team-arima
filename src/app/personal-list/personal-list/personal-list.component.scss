@@ -1,5 +1,15 @@
+.calendar {
+  margin: 16px;
+}
+
+.user-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .personal-list-wrapper {
   text-align: center;
+  margin-top: 24px;
 }
 
 .avatar {
@@ -7,5 +17,9 @@
   width: 100px;
   height: 100px;
   background: center/cover;
-  margin: 24px auto;
+}
+
+.name {
+  margin-left: 64px;
+  font-size: 24px;
 }
