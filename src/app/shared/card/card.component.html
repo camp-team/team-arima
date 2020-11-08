@@ -3,7 +3,7 @@
     <mat-card-title class="card__title">{{ post.title }}</mat-card-title>
     <div *ngIf="user$ | async as user">
       <button
-        *ngIf="user.uid === post.authorUid"
+        *ngIf="authService.uid === post.authorUid"
         mat-icon-button
         [matMenuTriggerFor]="menuRef"
         class="card__edit"
@@ -27,6 +27,14 @@
     <p class="card__text">
       {{ post.text }}
     </p>
+    <a
+      class="card__link"
+      *ngIf="post.link"
+      href="{{ post.link }}"
+      target="_blank"
+    >
+      {{ post.link }}
+    </a>
   </mat-card-content>
 
   <div class="card__bottom">

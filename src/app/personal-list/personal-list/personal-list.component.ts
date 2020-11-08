@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PersonalListComponent implements OnInit {
   user$: Observable<UserData>;
-  post$: Observable<Post[]>;
+  posts$: Observable<Post[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,7 +29,7 @@ export class PersonalListComponent implements OnInit {
     this.route.paramMap.subscribe((map) => {
       const uid = map.get('id');
       this.user$ = this.userService.getUser(uid);
-      this.post$ = this.postService.getPostsByAuthorUid(uid);
+      this.posts$ = this.postService.getPostsByAuthorUid(uid);
     });
   }
 }
