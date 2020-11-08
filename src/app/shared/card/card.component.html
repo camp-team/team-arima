@@ -38,25 +38,35 @@
   </mat-card-content>
 
   <div class="card__bottom">
-    <div *ngIf="user$ | async as user" class="card__profile">
+    <div *ngIf="author$ | async as author" class="card__profile">
       <a
         routerLink="/personal-list/{{ post.authorUid }}"
         class="profile__inner"
       >
         <div
           mat-card-avatar
-          style="background-image: url('{{ user.avatarUrl }}');"
+          style="background-image: url('{{ author.avatarUrl }}');"
           class="avatar"
         ></div>
-        <p class="profile__name">{{ user.name }}</p>
+        <p class="profile__name">{{ author.name }}</p>
       </a>
     </div>
     <div class="card__like">
-      <div>{{ post.likedCount }}</div>
       <div class="like__button">
         <input
+          *ngIf="!isLiked"
           type="checkbox"
           class="like__checkbox"
+          [class.like__checkbox--true]="isLiked"
+          (click)="likePost()"
+          id="checkbox{{ index }}"
+        />
+        <input
+          *ngIf="isLiked"
+          type="checkbox"
+          class="like__checkbox"
+          [class.like__checkbox--true]="isLiked"
+          (click)="unLikePost()"
           id="checkbox{{ index }}"
         />
         <label for="checkbox{{ index }}">
@@ -74,7 +84,7 @@
               <path
                 d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
                 class="like__heart"
-                fill="#5cc0ef"
+                fill="#AAB8C2"
               />
               <circle
                 class="like__main-circ"
@@ -123,6 +133,7 @@
           </svg>
         </label>
       </div>
+      <div *ngIf="likedCount !== 0">{{ likedCount }}</div>
     </div>
   </div>
 </mat-card>

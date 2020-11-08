@@ -17,7 +17,6 @@ export class AuthService {
     switchMap((afUser) => {
       if (afUser) {
         this.uid = afUser?.uid;
-        console.log(this.uid);
         return this.userService.getUser(this.uid);
       } else {
         return of(null);

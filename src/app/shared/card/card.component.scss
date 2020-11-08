@@ -70,7 +70,7 @@
     overflow: visible;
     cursor: pointer;
   }
-  .like__checkbox:checked + label svg {
+  .like__checkbox--true + label svg {
     .like__heart {
       transform: scale(0.2);
       fill: #e2264d;
