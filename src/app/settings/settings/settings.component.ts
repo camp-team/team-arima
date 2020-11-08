@@ -40,7 +40,7 @@ export class SettingsComponent implements OnInit {
       .toPromise()
       .then((user) => {
         this.uid = user.uid;
-        this.oldImageUrl = user.avatarUrl || '';
+        this.oldImageUrl = user.avatarUrl;
         this.nameForm.patchValue(user.name || '');
       });
   }
