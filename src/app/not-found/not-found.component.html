@@ -7,12 +7,12 @@
     <div class="not-found__under">
       <ng-template #notLoggedIn>
         <button mat-button>
-          <a routerLink="/">Topに戻る</a>
+          <a routerLink="welcome">Topに戻る</a>
         </button>
       </ng-template>
       <ng-container *ngIf="authService.user$ | async as user; else notLoggedIn">
         <button mat-button>
-          <a routerLink="/home">ホームに戻る</a>
+          <a routerLink="/">ホームに戻る</a>
         </button>
       </ng-container>
     </div>
