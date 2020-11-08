@@ -3,32 +3,26 @@
 
 .header {
   color: $color-base;
-  padding: 24px;
   box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   background-color: #5cc0ef;
-  justify-content: center;
-  &__search {
-    color: white;
-    font-size: 24px;
-  }
+  justify-content: space-between;
+  padding: 8px 16px;
   &__logo {
     margin: 0 auto;
     font-size: 24px;
     color: white;
   }
 
-  &__logo-icon {
-    padding: 16px;
+  &__logo-inner {
     display: block;
     height: 100%;
   }
   &__avatar {
-    background-color: white;
     border-radius: 50%;
     width: 40px;
-    height: 64px;
+    height: 40px;
     background-size: cover;
   }
 }
