@@ -7,9 +7,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { CarendarComponent } from './carendar/carendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  timeGridPlugin,
+  listPlugin,
+  interactionPlugin,
+]);
 
 @NgModule({
-  declarations: [CardComponent],
+  declarations: [CardComponent, CarendarComponent],
   imports: [
     CommonModule,
     SharedRoutingModule,
@@ -17,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
+    FullCalendarModule,
   ],
-  exports: [CardComponent],
+  exports: [CardComponent, CarendarComponent],
 })
 export class SharedModule {}
