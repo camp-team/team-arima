@@ -12,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class CardComponent implements OnInit {
   @Input() post: Post;
+  @Input() index: number;
 
   user$: Observable<UserData>;
 
